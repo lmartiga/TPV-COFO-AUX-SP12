@@ -1,0 +1,24 @@
+<div class="session-blok">
+  <div class="childConfirm noP"
+    [style.z-index]="clickStopDispenser ? '1000': '0'">
+    <tpv-confirm-action-static
+      *ngIf="clickStopDispenser"
+      [wantStopPump]="wantStopPump"
+      [externalpopup]="false">
+    </tpv-confirm-action-static>
+  </div>
+  <div class="container noP">
+    <div class="button-emergency">
+      <tpv-options-auxiliar
+        (keydown)="onKeydown($event)">
+      </tpv-options-auxiliar>
+    </div>
+    <div class="childElement">
+      <tpv-static-keyboard
+        [textToShow]='msjtexto'
+        [sizeNumbers]='true'
+        [style.display]="!clickStopDispenser ? 'initial' : 'none'">
+      </tpv-static-keyboard>
+    </div>
+  </div>
+</div>
